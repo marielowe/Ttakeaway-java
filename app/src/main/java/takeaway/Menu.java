@@ -15,6 +15,10 @@ public class Menu {
         System.out.printf("%s : %.2f \n", i, restaurantMenu.get(i));
     }
   }
+  public HashMap<String, Double> getMenu() {
+  return restaurantMenu;
+  }
+
   public static void main(String[] args){
     Menu menu = new Menu();
     menu.seeMenu();
