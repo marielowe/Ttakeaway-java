@@ -1,9 +1,10 @@
 package takeaway;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Takeaway {
-  public ArrayList<String> basket = new ArrayList<>();
+ArrayList<String> basket = new ArrayList<>();
   Menu menu;
 
   public Takeaway(Menu menu){
@@ -24,8 +25,20 @@ public class Takeaway {
           cost += menu.getMenu().get(item); 
       }
   }
-  return String.format("The total is £%.2f", cost);  
+  return String.format("The total is £%.2f", cost); 
+  }
+
+  public List<String> getAll() {
+    return basket;
 }
+
+  public Boolean checkTotal(CharSequence myTotal){
+    if(total().contains(myTotal)){
+      return true;
+      }else{
+      return false;
+    } 
+  }
       public static void main(String[] args) {
         Menu menu = new Menu();
         Takeaway takeaway = new Takeaway(menu);
@@ -33,5 +46,6 @@ public class Takeaway {
         System.out.println(takeaway.add("Choc Cake"));
         System.out.println(takeaway.basket);
         System.out.println(takeaway.total());
+        System.out.println(takeaway.checkTotal("5.00"));
       }
 }

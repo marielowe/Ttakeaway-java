@@ -11,8 +11,8 @@ public class Menu {
   }
 
   public void seeMenu() {
-    for (String i : restaurantMenu.keySet()) {
-        System.out.printf("%s : %.2f \n", i, restaurantMenu.get(i));
+    for (String item : restaurantMenu.keySet()) {
+        System.out.printf("%s : %.2f \n", item, restaurantMenu.get(item));
     }
   }
   public HashMap<String, Double> getMenu() {
